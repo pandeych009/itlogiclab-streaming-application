@@ -1,575 +1,168 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
-              	
-  
-  
-  
-  
-  
-  
-  <modelVersion>4.0.0</modelVersion>
-              	
-  
-  
-  
-  
-  
-  
-  <parent>
-                            		
-    
-    
-    
-    
-    
-    
-    <groupId>org.springframework.boot</groupId>
-                            		
-    
-    
-    
-    
-    
-    
-    <artifactId>spring-boot-starter-parent</artifactId>
-                            		
-    
-    
-    
-    
-    
-    
-    <version>3.1.8</version>
-                            		
-    
-    
-    
-    
-    
-    
-    <relativePath/>
-                             
-    
-    
-    
-    
-    
-    
-    <!-- lookup parent from repository -->
-                            	
-  
-  
-  
-  
-  
-  
-  </parent>
-              	
-	
-  
-  
-  
-  
-  
-  
-  <groupId>com.itlogiclab.microservice</groupId>
-              	
-  
-  
-  
-  
-  
-  
-  <artifactId>itlogiclab-streaming-application</artifactId>
-              	
-  
-  
-  
-  
-  
-  
-  <version>0.0.1-SNAPSHOT</version>
-              	
-	
-	
-  
-  
-  
-  
-  
-  
-  <packaging>pom</packaging>
-              	
-  
-  
-  
-  
-  
-  
-  <name>itlogiclab-streaming-application</name>
-              	
-  
-  
-  
-  
-  
-  
-  <description>Streaming Application </description>
-              	
-	
-  
-  
-  
-  
-  
-  
-  <properties>
-                            		
-    
-    
-    
-    
-    
-    
-    <elasticsearch.version>7.9.1</elasticsearch.version>
-                            		
-    
-    
-    
-    
-    
-    
-    <lombok.version>1.18.24</lombok.version>
-                            		
-    
-    
-    
-    
-    
-    
-    <twitter4j-stream-version>4.0.7</twitter4j-stream-version>
-                            		
-    
-    
-    
-    
-    
-    
-    <maven.compiler.plugin.version>3.12.1</maven.compiler.plugin.version>
-                            		
-    
-    
-    
-    
-    
-    
-    <java.version>17</java.version>
-                            		
-    
-    
-    
-    
-    
-    
-    <maven.compiler.source>17</maven.compiler.source>
-                            		
-    
-    
-    
-    
-    
-    
-    <maven.compiler.target>17</maven.compiler.target>
-                            		
-    
-    
-    
-    
-    
-    
-    <spring-boot.version>3.1.7</spring-boot.version>
-                            		
-    
-    
-    
-    
-    
-    
-    <avro.version>1.11.1</avro.version>
-                            		
-    
-    
-    
-    
-    
-    
-    <kafka-avro-serializer.version>7.4.0</kafka-avro-serializer.version>
-                            		
-    
-    
-    
-    
-    
-    
-    <spring-cloud-dependencies.version>2022.0.4</spring-cloud-dependencies.version>
-                            		
-    
-    
-    
-    
-    
-    
-    <spring-cloud.version>4.0.3</spring-cloud.version>
-                            		
-    
-    
-    
-    
-    
-    
-    <!-- 
+<project
+	xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>3.1.8</version>
+		<relativePath/>
+		<!-- lookup parent from repository -->
+	</parent>
+	<groupId>com.itlogiclab.microservice</groupId>
+	<artifactId>itlogiclab-streaming-application</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>pom</packaging>
+	<name>itlogiclab-streaming-application</name>
+	<description>Streaming Application </description>
+	<properties>
+		<elasticsearch.version>7.9.1</elasticsearch.version>
+		<lombok.version>1.18.24</lombok.version>
+		<twitter4j-stream-version>4.0.7</twitter4j-stream-version>
+		<maven.compiler.plugin.version>3.12.1</maven.compiler.plugin.version>
+		<java.version>17</java.version>
+		<maven.compiler.source>17</maven.compiler.source>
+		<maven.compiler.target>17</maven.compiler.target>
+		<spring-boot.version>3.1.7</spring-boot.version>
+		<avro.version>1.11.1</avro.version>
+		<kafka-avro-serializer.version>7.4.0</kafka-avro-serializer.version>
+		<spring-cloud-dependencies.version>2022.0.4</spring-cloud-dependencies.version>
+		<spring-cloud.version>4.0.3</spring-cloud.version>
+		<!-- 
       RESILLIENCY : 3.0.3
       prom micromerter: 1.11.2
       -->
-                            	
-  
-  
-  
-  
-  
-  
-  </properties>
-              	
-
-
+	</properties>
 	
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-starter</artifactId>
+				<version>${spring-boot.version}</version>
+			</dependency>
+			
+			<dependency>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-devtools</artifactId>
+				<version>${spring-boot.version}</version>
+				<scope>runtime</scope>
+				<optional>true</optional>
+			</dependency>
+			
+			<dependency>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-starter-test</artifactId>
+				<version>${spring-boot.version}</version>
+				<scope>test</scope>
+			</dependency>
+			
+			<dependency>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-starter-webflux</artifactId>
+				<version>${spring-boot.version}</version>
+			</dependency>
+			
+			<dependency>
+				<groupId>org.springframework.cloud</groupId>
+				<artifactId>spring-cloud-starter-config</artifactId>
+				<version>${spring-cloud.version}</version>
+			</dependency>
+			
+			<dependency>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-autoconfigure</artifactId>
+				<version>${spring-boot.version}</version>
+			</dependency>
+			
+			<dependency>
+				<groupId>org.springframework.kafka</groupId>
+				<artifactId>spring-kafka</artifactId>
+				<version>${spring-kafka.version}</version>
+			</dependency>
+			
+			<dependency>
+				<groupId>io.confluent</groupId>
+				<artifactId>kafka-avro-serializer</artifactId>
+				<version>${kafka-avro-serializer.version}</version>
+				<exclusions>
+					<exclusion>
+						<groupId>org.slf4j</groupId>
+						<artifactId>slf4j-log4j12</artifactId>
+					</exclusion>
+					<exclusion>
+						<groupId>log4j</groupId>
+						<artifactId>log4j</artifactId>
+					</exclusion>
+					<exclusion>
+						<groupId>io.swagger</groupId>
+						<artifactId>swagger-annotations</artifactId>
+					</exclusion>
+					<exclusion>
+						<groupId>io.swagger</groupId>
+						<artifactId>swagger-core</artifactId>
+					</exclusion>
+				</exclusions>
+			</dependency>
+			
+			<dependency>
+				<groupId>org.apache.avro</groupId>
+				<artifactId>avro</artifactId>
+				<version>${avro.version}</version>
+			</dependency>
+			
+			<dependency>
+				<groupId>org.springframework.cloud</groupId>
+				<artifactId>spring-cloud-dependencies</artifactId>
+				<version>${spring-cloud-dependencies.version}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+			
+			<!-- --> 
+			<dependency>
+				<groupId>com.itlogiclab.microservice</groupId>
+				<artifactId>itlogiclab-common-application-config</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
 	
-  
-  
-  
-  
-  
-  
-  <dependencies>
-                            		
-    
-    
-    
-    
-    
-    
-    <dependency>
-                                          			
-      
-      
-      
-      
-      
-      
-      <groupId>org.springframework.boot</groupId>
-                                          			
-      
-      
-      
-      
-      
-      
-      <artifactId>spring-boot-starter</artifactId>
-                                          		
-    
-    
-    
-    
-    
-    
-    </dependency>
-                            		
-    
-    
-    
-    
-    
-    
-    <dependency>
-                                          			
-      
-      
-      
-      
-      
-      
-      <groupId>org.apache.kafka</groupId>
-                                          			
-      
-      
-      
-      
-      
-      
-      <artifactId>kafka-streams</artifactId>
-                                          		
-    
-    
-    
-    
-    
-    
-    </dependency>
-                            		
-    
-    
-    
-    
-    
-    
-    <dependency>
-                                          			
-      
-      
-      
-      
-      
-      
-      <groupId>org.springframework.boot</groupId>
-                                          			
-      
-      
-      
-      
-      
-      
-      <artifactId>spring-boot-devtools</artifactId>
-                                          			
-      
-      
-      
-      
-      
-      
-      <scope>runtime</scope>
-                                          			
-      
-      
-      
-      
-      
-      
-      <optional>true</optional>
-                                          		
-    
-    
-    
-    
-    
-    
-    </dependency>
-                            		
-    
-    
-    
-    
-    
-    
-    <dependency>
-                                          			
-      
-      
-      
-      
-      
-      
-      <groupId>org.springframework.boot</groupId>
-                                          			
-      
-      
-      
-      
-      
-      
-      <artifactId>spring-boot-starter-test</artifactId>
-                                          			
-      
-      
-      
-      
-      
-      
-      <scope>test</scope>
-                                          		
-    
-    
-    
-    
-    
-    
-    </dependency>
-                            	
-  
-  
-  
-  
-  
-  
-  </dependencies>
-              	
-  
-  
-  
-  
-  
-  
-  <build>
-                            		
-    
-    
-    
-    
-    
-    
-    <plugins>
-                                          			
-      
-      
-      
-      
-      
-      
-      <plugin>
-                                                        				
-        
-        
-        
-        
-        
-        
-        <groupId>org.springframework.boot</groupId>
-                                                        				
-        
-        
-        
-        
-        
-        
-        <artifactId>spring-boot-maven-plugin</artifactId>
-                                                        				
-        
-        
-        
-        
-        
-        
-        <configuration>
-                                                                      					
-          
-          
-          
-          
-          
-          
-          <image>
-                                                                                    						
-            
-            
-            
-            
-            
-            
-            <builder>paketobuildpacks/builder-jammy-base:latest</builder>
-                                                                                    					
-          
-          
-          
-          
-          
-          
-          </image>
-                                                                      				
-        
-        
-        
-        
-        
-        
-        </configuration>
-                                                        			
-      
-      
-      
-      
-      
-      
-      </plugin>
-                                          		
-    
-    
-    
-    
-    
-    
-    </plugins>
-                            	
-  
-  
-  
-  
-  
-  
-  </build>
-              
-  
-  
-  
-  
-  
-  
-  <modules>
-                              
-    
-    
-    
-    
-    
-    
-    <module>itlogiclab-common-kafka-module</module>
-                              
-    
-    
-    
-    
-    
-    
-    <module>itlogiclab-common-application-config</module>
-                          
-    
-    
-    
-    
-    
-    <module>itlogiclab-common-config-module</module>
-                      
-    
-    
-    
-    
-    <module>itlogiclab-common-elastic-module</module>
-                  
-    
-    
-    
-    <module>itlogiclab-common-config-server</module>
-              
-    
-    
-    <module>itlogiclab-streaming-producer-application</module>
-          
-    
-    <module>itlogiclab-streaming-consumer-application</module>
-      
-  </modules>
-            
-
-
-
-
-
+	<repositories>
+		<repository>
+			<id>confluent</id>
+			<url>https://packages.confluent.io/maven/</url>
+		</repository>
+	</repositories>
+	
+	<build>
+		<pluginManagement>
+			<plugins>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-compiler-plugin</artifactId>
+					<version>${maven.compiler.plugin.version}</version>
+					<configuration>
+						<source>${java.version}</source>
+						<target>${java.version}</target>
+					</configuration>
+				</plugin>
+				<plugin>
+					<groupId>org.springframework.boot</groupId>
+					<artifactId>spring-boot-maven-plugin</artifactId>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+	</build>
+	
+	<modules>
+		<module>itlogiclab-common-kafka-module</module>
+		<module>itlogiclab-common-application-config</module>
+		<module>itlogiclab-common-config-module</module>
+		<module>itlogiclab-common-elastic-module</module>
+		<module>itlogiclab-common-config-server</module>
+		<module>itlogiclab-streaming-producer-application</module>
+		<module>itlogiclab-streaming-consumer-application</module>
+	</modules>
 </project>

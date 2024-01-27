@@ -7,6 +7,7 @@
 	    <artifactId>itlogiclab-streaming-application</artifactId>
 	    <version>0.0.1-SNAPSHOT</version>
 	  </parent>
+	  
 	  <artifactId>itlogiclab-common-elastic-module</artifactId>
 	  <name>itlogiclab-common-elastic-module</name>
 	  <packaging>pom</packaging>

@@ -1,0 +1,22 @@
+server:
+  port: 8888
+  
+spring: 
+   application: 
+     name: configserver
+   cloud: 
+     config: 
+       server:
+         git: 
+           uri: https://github.com/pandeych009/itlogiclab-spring-cloud-config-server-repository
+           username: pandeych009
+           password: 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
+           default-label: dev
+           clone-on-start: true
+           basedir: target/config
+     fail-fast: true     
+
+logging:
+  level:
+    ROOT: INFO
+    org.spring.framework.cloud.config: DEBUG 
