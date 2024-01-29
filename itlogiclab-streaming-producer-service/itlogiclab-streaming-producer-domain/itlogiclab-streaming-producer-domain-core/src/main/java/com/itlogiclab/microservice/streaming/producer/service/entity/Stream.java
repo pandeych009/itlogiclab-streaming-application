@@ -3,21 +3,15 @@ package com.itlogiclab.microservice.streaming.producer.service.entity;
 import java.time.ZonedDateTime;
 import java.util.UUID;
 
-
-
 import com.itlogiclab.microservice.common.domain.entity.AggregateRoot;
 
-public class StreamEntity extends AggregateRoot<Long>{
-	
-	//private static final Logger LOG = LogManager.getLogger(StreamingEntity.class); 
-	
+public class Stream extends AggregateRoot<Long>{
 	
 	private String 			data;
 	private Long            userId; 
 	private ZonedDateTime   createdAt;
 	
-	
-	private StreamEntity(StreamingEntityBuilder builder) {
+	private Stream(StreamingEntityBuilder builder) {
 		setId(builder.id);
 		this.data 		= builder.data;
 		this.userId 	= builder.userId;
@@ -49,7 +43,12 @@ public class StreamEntity extends AggregateRoot<Long>{
 		return createdAt;
 	}
 
-	
+	@Override
+	public String toString() {
+		return "Stream [data=" + data + ", userId=" + userId + ", createdAt=" + createdAt + "]";
+	}
+
+
 	public static StreamingEntityBuilder builder() {
 		return new StreamingEntityBuilder();
 	}
@@ -83,8 +82,9 @@ public class StreamEntity extends AggregateRoot<Long>{
 			return this;
 		}
 
-		public StreamEntity build() {
-			return new StreamEntity(this);
+		public Stream build() {
+			return new Stream(this);
 		}
 	} 
+
 }

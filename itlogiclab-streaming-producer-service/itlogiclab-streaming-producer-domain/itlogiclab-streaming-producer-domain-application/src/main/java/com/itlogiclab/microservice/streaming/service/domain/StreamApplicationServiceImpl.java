@@ -13,25 +13,28 @@ import org.springframework.stereotype.Component;
 
 import com.itlogiclab.microservice.common.application.config.StreamServiceConfig;
 import com.itlogiclab.microservice.common.application.config.utils.StreamApplicationConstants;
-import com.itlogiclab.microservice.streaming.service.domain.dto.event.StreamCreatedEvent;
+import com.itlogiclab.microservice.streaming.producer.service.event.StreamCreatedEvent;
+import com.itlogiclab.microservice.streaming.producer.service.event.StreamEvent;
 import com.itlogiclab.microservice.streaming.service.domain.mapper.StreamDomainMapper;
+import com.itlogiclab.microservice.streaming.service.domain.ports.input.message.listener.StreamGenerationMessageListener;
 import com.itlogiclab.microservice.streaming.service.domain.ports.input.service.StreamApplicationService;
 
 @Component
 public class StreamApplicationServiceImpl implements StreamApplicationService<String> {
 
 	private static final Logger LOG = LoggerFactory.getLogger(StreamApplicationServiceImpl.class);
-
 	private static final Random RANDOM = new Random();
 	
-	private final StreamServiceConfig 				streamServiceConfig;
-	private final StreamGenerationMessageListener   streamGenerationMessageListener;
-	private final StreamDomainMapper				streamDomainMapper;
-
-	public StreamApplicationServiceImpl(StreamServiceConfig streamServiceConfig, StreamDomainMapper streamDomainMapper, StreamGenerationMessageListener streamGenerationMessageListener) {
-		this.streamServiceConfig 				= streamServiceConfig;
-		this.streamGenerationMessageListener 	= streamGenerationMessageListener;
-		this.streamDomainMapper 				= streamDomainMapper;
+	private final StreamServiceConfig 					streamServiceConfig;
+	private final StreamGenerationMessageListener   	streamGenerationMessageListener; 
+	private final StreamDomainMapper					streamDomainMapper;
+	
+	public StreamApplicationServiceImpl(StreamServiceConfig streamServiceConfig, 
+			StreamDomainMapper streamDomainMapper, 
+			StreamGenerationMessageListener streamGenerationMessageListener) {
+		this.streamServiceConfig 					= streamServiceConfig;
+		this.streamGenerationMessageListener 		= streamGenerationMessageListener;
+		this.streamDomainMapper 					= streamDomainMapper;
 	}
 
 	@Override
@@ -41,7 +44,7 @@ public class StreamApplicationServiceImpl implements StreamApplicationService<St
 		String[] streamKeywords = streamServiceConfig.getFilterKeywords().toArray(new String[0]); 
 		int minStreamLength		= streamServiceConfig.getMinLength(); 
 		int maxStreamLength		= streamServiceConfig.getMaxLength();
-		Long streamSleepTime		= streamServiceConfig.getSleepMs();
+		Long streamSleepTime	= streamServiceConfig.getSleepMs();
 		simulateTwitterStream(streamKeywords, minStreamLength, maxStreamLength, streamSleepTime);
 		return null;
 	}
@@ -58,19 +61,16 @@ public class StreamApplicationServiceImpl implements StreamApplicationService<St
 		}
 	}
 	
-	
 	private void simulateTwitterStream(String[] streamKeywords, int minStreamLength, int maxStreamLength, long sleepTime) {
 		Executors.newSingleThreadExecutor().submit(() -> {
 			try {
 				while(true) {
 					String formattedStreamAsRawJson = getFomattedStream(streamKeywords, minStreamLength, maxStreamLength);
-					//streamGenerationMessagePublisher.publishStreamGenerationEvent(streamDomainMapper.createStreamRequest(streamDomainMapper.createStreamEntity(formattedStreamAsRawJson)));
-					
-					StreamCreatedEvent domainEvent = new StreamCreatedEvent(this, streamDomainMapper.createStreamRequest(streamDomainMapper.createStreamEntity(formattedStreamAsRawJson)));
+					StreamEvent domainEvent = new StreamCreatedEvent(streamDomainMapper.createStreamEntity(formattedStreamAsRawJson)); 
 					streamGenerationMessageListener.onApplicationEvent(domainEvent);
 					sleep(sleepTime);
 				}
-			} catch (RuntimeException e) {
+			} catch (RuntimeException e) {  
 				LOG.error("Error while creating stream!");
 			}
 		});

@@ -11,11 +11,10 @@
     
 
 	<!-- LOG "com.baeldung*" at TRACE level -->
-    <logger name="org.springframework.cloud" level="TRACE" additivity="false">
+    <logger name="org.springframework" level="DEBUG" additivity="false">
         <appender-ref ref="Console" /> 
     </logger>
-    
-    <root level="TRACE">
+    <root level="INFO">
         <appender-ref ref="Console" />
     </root>
 </configuration>

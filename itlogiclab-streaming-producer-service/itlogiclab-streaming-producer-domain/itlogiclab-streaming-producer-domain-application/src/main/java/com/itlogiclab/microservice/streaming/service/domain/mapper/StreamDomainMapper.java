@@ -1,13 +1,13 @@
 package com.itlogiclab.microservice.streaming.service.domain.mapper;
 
+import java.time.ZoneId;
 import java.time.ZonedDateTime;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
 
-import com.itlogiclab.microservice.streaming.producer.service.entity.StreamEntity;
-import com.itlogiclab.microservice.streaming.service.domain.dto.create.CreateStreamRequest;
+import com.itlogiclab.microservice.streaming.producer.service.entity.Stream;
 
 @Component
 public class StreamDomainMapper {
@@ -16,20 +16,29 @@ public class StreamDomainMapper {
 	private static long previousTimeMillis = System.currentTimeMillis();
 	private static long counter = 0L;
 	
-	public StreamEntity createStreamEntity(String stream) {
-		return StreamEntity.builder()
+	public Stream createStreamEntity(String stream) {
+		return Stream.builder()
 				.withData(stream)
 				.withId(id())
 				.withUserId(id())
-				.withCreatedAt(ZonedDateTime.now())
+				.withCreatedAt(ZonedDateTime.now(ZoneId.of("UTC")))
 				.build();
 	}
-	
-	public CreateStreamRequest createStreamRequest(StreamEntity streamEntity) {
-		return CreateStreamRequest.builder()
-				.withStreamRequest(streamEntity)
-				.build();
-	}
+//	
+//	public StreamEntity createStreamEntity(String stream, boolean mock) {
+//		return StreamEntity.builder()
+//				.withData(stream)
+//				.withId(10L)
+//				.withUserId(11L)
+//				.withCreatedAt(ZonedDateTime.now())
+//				.build();
+//	}
+//	
+//	public CreateStreamRequest createStreamRequest(StreamEntity streamEntity) {
+//		return CreateStreamRequest.builder()
+//				.withStreamRequest(streamEntity)
+//				.build();
+//	}
 	
 	
 	public static synchronized long id() {
