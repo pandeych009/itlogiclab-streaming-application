@@ -13,26 +13,26 @@ import org.apache.avro.message.BinaryMessageDecoder;
 import org.apache.avro.message.SchemaStore;
 
 @org.apache.avro.specific.AvroGenerated
-public class TwitterAvroModel extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
-  private static final long serialVersionUID = 2855585796654201596L;
+public class StreamAvroModel extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
+  private static final long serialVersionUID = -7386673978360436775L;
 
 
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"TwitterAvroModel\",\"namespace\":\"com.itlogiclab.microservice.streaming.kafka.avro.modal\",\"fields\":[{\"name\":\"userId\",\"type\":\"long\"},{\"name\":\"id\",\"type\":\"long\"},{\"name\":\"text\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}]},{\"name\":\"createdAt\",\"type\":[\"null\",\"long\"],\"logicalType\":[\"null\",\"date\"]}]}");
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"StreamAvroModel\",\"namespace\":\"com.itlogiclab.microservice.streaming.kafka.avro.modal\",\"fields\":[{\"name\":\"userId\",\"type\":\"long\"},{\"name\":\"id\",\"type\":\"long\"},{\"name\":\"text\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}]},{\"name\":\"createdAt\",\"type\":[\"null\",\"long\"],\"logicalType\":[\"null\",\"date\"]}]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
 
   private static final SpecificData MODEL$ = new SpecificData();
 
-  private static final BinaryMessageEncoder<TwitterAvroModel> ENCODER =
+  private static final BinaryMessageEncoder<StreamAvroModel> ENCODER =
       new BinaryMessageEncoder<>(MODEL$, SCHEMA$);
 
-  private static final BinaryMessageDecoder<TwitterAvroModel> DECODER =
+  private static final BinaryMessageDecoder<StreamAvroModel> DECODER =
       new BinaryMessageDecoder<>(MODEL$, SCHEMA$);
 
   /**
    * Return the BinaryMessageEncoder instance used by this class.
    * @return the message encoder used by this class
    */
-  public static BinaryMessageEncoder<TwitterAvroModel> getEncoder() {
+  public static BinaryMessageEncoder<StreamAvroModel> getEncoder() {
     return ENCODER;
   }
 
@@ -40,7 +40,7 @@ public class TwitterAvroModel extends org.apache.avro.specific.SpecificRecordBas
    * Return the BinaryMessageDecoder instance used by this class.
    * @return the message decoder used by this class
    */
-  public static BinaryMessageDecoder<TwitterAvroModel> getDecoder() {
+  public static BinaryMessageDecoder<StreamAvroModel> getDecoder() {
     return DECODER;
   }
 
@@ -49,12 +49,12 @@ public class TwitterAvroModel extends org.apache.avro.specific.SpecificRecordBas
    * @param resolver a {@link SchemaStore} used to find schemas by fingerprint
    * @return a BinaryMessageDecoder instance for this class backed by the given SchemaStore
    */
-  public static BinaryMessageDecoder<TwitterAvroModel> createDecoder(SchemaStore resolver) {
+  public static BinaryMessageDecoder<StreamAvroModel> createDecoder(SchemaStore resolver) {
     return new BinaryMessageDecoder<>(MODEL$, SCHEMA$, resolver);
   }
 
   /**
-   * Serializes this TwitterAvroModel to a ByteBuffer.
+   * Serializes this StreamAvroModel to a ByteBuffer.
    * @return a buffer holding the serialized data for this instance
    * @throws java.io.IOException if this instance could not be serialized
    */
@@ -63,12 +63,12 @@ public class TwitterAvroModel extends org.apache.avro.specific.SpecificRecordBas
   }
 
   /**
-   * Deserializes a TwitterAvroModel from a ByteBuffer.
+   * Deserializes a StreamAvroModel from a ByteBuffer.
    * @param b a byte buffer holding serialized data for an instance of this class
-   * @return a TwitterAvroModel instance decoded from the given buffer
+   * @return a StreamAvroModel instance decoded from the given buffer
    * @throws java.io.IOException if the given bytes could not be deserialized into an instance of this class
    */
-  public static TwitterAvroModel fromByteBuffer(
+  public static StreamAvroModel fromByteBuffer(
       java.nio.ByteBuffer b) throws java.io.IOException {
     return DECODER.decode(b);
   }
@@ -83,7 +83,7 @@ public class TwitterAvroModel extends org.apache.avro.specific.SpecificRecordBas
    * to their default values from the schema.  If that is desired then
    * one should use <code>newBuilder()</code>.
    */
-  public TwitterAvroModel() {}
+  public StreamAvroModel() {}
 
   /**
    * All-args constructor.
@@ -92,7 +92,7 @@ public class TwitterAvroModel extends org.apache.avro.specific.SpecificRecordBas
    * @param text The new value for text
    * @param createdAt The new value for createdAt
    */
-  public TwitterAvroModel(java.lang.Long userId, java.lang.Long id, java.lang.String text, java.lang.Long createdAt) {
+  public StreamAvroModel(java.lang.Long userId, java.lang.Long id, java.lang.String text, java.lang.Long createdAt) {
     this.userId = userId;
     this.id = id;
     this.text = text;
@@ -199,45 +199,45 @@ public class TwitterAvroModel extends org.apache.avro.specific.SpecificRecordBas
   }
 
   /**
-   * Creates a new TwitterAvroModel RecordBuilder.
-   * @return A new TwitterAvroModel RecordBuilder
+   * Creates a new StreamAvroModel RecordBuilder.
+   * @return A new StreamAvroModel RecordBuilder
    */
-  public static com.itlogiclab.microservice.streaming.kafka.avro.modal.TwitterAvroModel.Builder newBuilder() {
-    return new com.itlogiclab.microservice.streaming.kafka.avro.modal.TwitterAvroModel.Builder();
+  public static com.itlogiclab.microservice.streaming.kafka.avro.modal.StreamAvroModel.Builder newBuilder() {
+    return new com.itlogiclab.microservice.streaming.kafka.avro.modal.StreamAvroModel.Builder();
   }
 
   /**
-   * Creates a new TwitterAvroModel RecordBuilder by copying an existing Builder.
+   * Creates a new StreamAvroModel RecordBuilder by copying an existing Builder.
    * @param other The existing builder to copy.
-   * @return A new TwitterAvroModel RecordBuilder
+   * @return A new StreamAvroModel RecordBuilder
    */
-  public static com.itlogiclab.microservice.streaming.kafka.avro.modal.TwitterAvroModel.Builder newBuilder(com.itlogiclab.microservice.streaming.kafka.avro.modal.TwitterAvroModel.Builder other) {
+  public static com.itlogiclab.microservice.streaming.kafka.avro.modal.StreamAvroModel.Builder newBuilder(com.itlogiclab.microservice.streaming.kafka.avro.modal.StreamAvroModel.Builder other) {
     if (other == null) {
-      return new com.itlogiclab.microservice.streaming.kafka.avro.modal.TwitterAvroModel.Builder();
+      return new com.itlogiclab.microservice.streaming.kafka.avro.modal.StreamAvroModel.Builder();
     } else {
-      return new com.itlogiclab.microservice.streaming.kafka.avro.modal.TwitterAvroModel.Builder(other);
+      return new com.itlogiclab.microservice.streaming.kafka.avro.modal.StreamAvroModel.Builder(other);
     }
   }
 
   /**
-   * Creates a new TwitterAvroModel RecordBuilder by copying an existing TwitterAvroModel instance.
+   * Creates a new StreamAvroModel RecordBuilder by copying an existing StreamAvroModel instance.
    * @param other The existing instance to copy.
-   * @return A new TwitterAvroModel RecordBuilder
+   * @return A new StreamAvroModel RecordBuilder
    */
-  public static com.itlogiclab.microservice.streaming.kafka.avro.modal.TwitterAvroModel.Builder newBuilder(com.itlogiclab.microservice.streaming.kafka.avro.modal.TwitterAvroModel other) {
+  public static com.itlogiclab.microservice.streaming.kafka.avro.modal.StreamAvroModel.Builder newBuilder(com.itlogiclab.microservice.streaming.kafka.avro.modal.StreamAvroModel other) {
     if (other == null) {
-      return new com.itlogiclab.microservice.streaming.kafka.avro.modal.TwitterAvroModel.Builder();
+      return new com.itlogiclab.microservice.streaming.kafka.avro.modal.StreamAvroModel.Builder();
     } else {
-      return new com.itlogiclab.microservice.streaming.kafka.avro.modal.TwitterAvroModel.Builder(other);
+      return new com.itlogiclab.microservice.streaming.kafka.avro.modal.StreamAvroModel.Builder(other);
     }
   }
 
   /**
-   * RecordBuilder for TwitterAvroModel instances.
+   * RecordBuilder for StreamAvroModel instances.
    */
   @org.apache.avro.specific.AvroGenerated
-  public static class Builder extends org.apache.avro.specific.SpecificRecordBuilderBase<TwitterAvroModel>
-    implements org.apache.avro.data.RecordBuilder<TwitterAvroModel> {
+  public static class Builder extends org.apache.avro.specific.SpecificRecordBuilderBase<StreamAvroModel>
+    implements org.apache.avro.data.RecordBuilder<StreamAvroModel> {
 
     private long userId;
     private long id;
@@ -253,7 +253,7 @@ public class TwitterAvroModel extends org.apache.avro.specific.SpecificRecordBas
      * Creates a Builder by copying an existing Builder.
      * @param other The existing Builder to copy.
      */
-    private Builder(com.itlogiclab.microservice.streaming.kafka.avro.modal.TwitterAvroModel.Builder other) {
+    private Builder(com.itlogiclab.microservice.streaming.kafka.avro.modal.StreamAvroModel.Builder other) {
       super(other);
       if (isValidValue(fields()[0], other.userId)) {
         this.userId = data().deepCopy(fields()[0].schema(), other.userId);
@@ -274,10 +274,10 @@ public class TwitterAvroModel extends org.apache.avro.specific.SpecificRecordBas
     }
 
     /**
-     * Creates a Builder by copying an existing TwitterAvroModel instance
+     * Creates a Builder by copying an existing StreamAvroModel instance
      * @param other The existing instance to copy.
      */
-    private Builder(com.itlogiclab.microservice.streaming.kafka.avro.modal.TwitterAvroModel other) {
+    private Builder(com.itlogiclab.microservice.streaming.kafka.avro.modal.StreamAvroModel other) {
       super(SCHEMA$, MODEL$);
       if (isValidValue(fields()[0], other.userId)) {
         this.userId = data().deepCopy(fields()[0].schema(), other.userId);
@@ -311,7 +311,7 @@ public class TwitterAvroModel extends org.apache.avro.specific.SpecificRecordBas
       * @param value The value of 'userId'.
       * @return This builder.
       */
-    public com.itlogiclab.microservice.streaming.kafka.avro.modal.TwitterAvroModel.Builder setUserId(long value) {
+    public com.itlogiclab.microservice.streaming.kafka.avro.modal.StreamAvroModel.Builder setUserId(long value) {
       validate(fields()[0], value);
       this.userId = value;
       fieldSetFlags()[0] = true;
@@ -331,7 +331,7 @@ public class TwitterAvroModel extends org.apache.avro.specific.SpecificRecordBas
       * Clears the value of the 'userId' field.
       * @return This builder.
       */
-    public com.itlogiclab.microservice.streaming.kafka.avro.modal.TwitterAvroModel.Builder clearUserId() {
+    public com.itlogiclab.microservice.streaming.kafka.avro.modal.StreamAvroModel.Builder clearUserId() {
       fieldSetFlags()[0] = false;
       return this;
     }
@@ -350,7 +350,7 @@ public class TwitterAvroModel extends org.apache.avro.specific.SpecificRecordBas
       * @param value The value of 'id'.
       * @return This builder.
       */
-    public com.itlogiclab.microservice.streaming.kafka.avro.modal.TwitterAvroModel.Builder setId(long value) {
+    public com.itlogiclab.microservice.streaming.kafka.avro.modal.StreamAvroModel.Builder setId(long value) {
       validate(fields()[1], value);
       this.id = value;
       fieldSetFlags()[1] = true;
@@ -370,7 +370,7 @@ public class TwitterAvroModel extends org.apache.avro.specific.SpecificRecordBas
       * Clears the value of the 'id' field.
       * @return This builder.
       */
-    public com.itlogiclab.microservice.streaming.kafka.avro.modal.TwitterAvroModel.Builder clearId() {
+    public com.itlogiclab.microservice.streaming.kafka.avro.modal.StreamAvroModel.Builder clearId() {
       fieldSetFlags()[1] = false;
       return this;
     }
@@ -389,7 +389,7 @@ public class TwitterAvroModel extends org.apache.avro.specific.SpecificRecordBas
       * @param value The value of 'text'.
       * @return This builder.
       */
-    public com.itlogiclab.microservice.streaming.kafka.avro.modal.TwitterAvroModel.Builder setText(java.lang.String value) {
+    public com.itlogiclab.microservice.streaming.kafka.avro.modal.StreamAvroModel.Builder setText(java.lang.String value) {
       validate(fields()[2], value);
       this.text = value;
       fieldSetFlags()[2] = true;
@@ -409,7 +409,7 @@ public class TwitterAvroModel extends org.apache.avro.specific.SpecificRecordBas
       * Clears the value of the 'text' field.
       * @return This builder.
       */
-    public com.itlogiclab.microservice.streaming.kafka.avro.modal.TwitterAvroModel.Builder clearText() {
+    public com.itlogiclab.microservice.streaming.kafka.avro.modal.StreamAvroModel.Builder clearText() {
       text = null;
       fieldSetFlags()[2] = false;
       return this;
@@ -429,7 +429,7 @@ public class TwitterAvroModel extends org.apache.avro.specific.SpecificRecordBas
       * @param value The value of 'createdAt'.
       * @return This builder.
       */
-    public com.itlogiclab.microservice.streaming.kafka.avro.modal.TwitterAvroModel.Builder setCreatedAt(java.lang.Long value) {
+    public com.itlogiclab.microservice.streaming.kafka.avro.modal.StreamAvroModel.Builder setCreatedAt(java.lang.Long value) {
       validate(fields()[3], value);
       this.createdAt = value;
       fieldSetFlags()[3] = true;
@@ -449,7 +449,7 @@ public class TwitterAvroModel extends org.apache.avro.specific.SpecificRecordBas
       * Clears the value of the 'createdAt' field.
       * @return This builder.
       */
-    public com.itlogiclab.microservice.streaming.kafka.avro.modal.TwitterAvroModel.Builder clearCreatedAt() {
+    public com.itlogiclab.microservice.streaming.kafka.avro.modal.StreamAvroModel.Builder clearCreatedAt() {
       createdAt = null;
       fieldSetFlags()[3] = false;
       return this;
@@ -457,9 +457,9 @@ public class TwitterAvroModel extends org.apache.avro.specific.SpecificRecordBas
 
     @Override
     @SuppressWarnings("unchecked")
-    public TwitterAvroModel build() {
+    public StreamAvroModel build() {
       try {
-        TwitterAvroModel record = new TwitterAvroModel();
+        StreamAvroModel record = new StreamAvroModel();
         record.userId = fieldSetFlags()[0] ? this.userId : (java.lang.Long) defaultValue(fields()[0]);
         record.id = fieldSetFlags()[1] ? this.id : (java.lang.Long) defaultValue(fields()[1]);
         record.text = fieldSetFlags()[2] ? this.text : (java.lang.String) defaultValue(fields()[2]);
@@ -474,8 +474,8 @@ public class TwitterAvroModel extends org.apache.avro.specific.SpecificRecordBas
   }
 
   @SuppressWarnings("unchecked")
-  private static final org.apache.avro.io.DatumWriter<TwitterAvroModel>
-    WRITER$ = (org.apache.avro.io.DatumWriter<TwitterAvroModel>)MODEL$.createDatumWriter(SCHEMA$);
+  private static final org.apache.avro.io.DatumWriter<StreamAvroModel>
+    WRITER$ = (org.apache.avro.io.DatumWriter<StreamAvroModel>)MODEL$.createDatumWriter(SCHEMA$);
 
   @Override public void writeExternal(java.io.ObjectOutput out)
     throws java.io.IOException {
@@ -483,8 +483,8 @@ public class TwitterAvroModel extends org.apache.avro.specific.SpecificRecordBas
   }
 
   @SuppressWarnings("unchecked")
-  private static final org.apache.avro.io.DatumReader<TwitterAvroModel>
-    READER$ = (org.apache.avro.io.DatumReader<TwitterAvroModel>)MODEL$.createDatumReader(SCHEMA$);
+  private static final org.apache.avro.io.DatumReader<StreamAvroModel>
+    READER$ = (org.apache.avro.io.DatumReader<StreamAvroModel>)MODEL$.createDatumReader(SCHEMA$);
 
   @Override public void readExternal(java.io.ObjectInput in)
     throws java.io.IOException {

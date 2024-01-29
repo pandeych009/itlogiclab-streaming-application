@@ -1,4 +1,4 @@
-package com.itlogiclab.microservice.streaming.service.config;
+package com.itlogiclab.microservice.common.application.config;
 
 import java.util.List;
 

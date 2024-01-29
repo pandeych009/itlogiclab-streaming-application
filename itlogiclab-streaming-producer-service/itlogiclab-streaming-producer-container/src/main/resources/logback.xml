@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+   <statusListener class="ch.qos.logback.core.status.OnConsoleStatusListener" />	
+    
+    <property name="BASE_LOG_LOC" 		value="/Users/pandeych445/dev/microservice/infrastructure/logs/learning" /> 
+    <property name="ARCHIVE_LOG_LOC" 	value="${BASE_LOG_LOC}/archived" />
+    <property name="LOG_FILE_NAME" 		value="itlogiclab-streaming-producer-service.log" />
+    <property name="ARCHIVE_FILE_NAME" 	value="itlogiclab-streaming-producer-service-%d{yyyy-MM-dd}.%i.log" />
+    
+	<include resource="itlogiclab-common-logback.xml"/>
+    
+
+	<!-- LOG "com.baeldung*" at TRACE level -->
+    <logger name="org.springframework.cloud" level="TRACE" additivity="false">
+        <appender-ref ref="Console" /> 
+    </logger>
+    
+    <root level="TRACE">
+        <appender-ref ref="Console" />
+    </root>
+</configuration>

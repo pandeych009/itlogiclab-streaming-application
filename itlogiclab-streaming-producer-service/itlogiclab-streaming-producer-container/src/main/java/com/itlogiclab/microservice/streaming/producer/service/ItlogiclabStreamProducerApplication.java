@@ -7,20 +7,22 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import com.itlogiclab.microservice.common.application.config.StreamServiceConfig;
-import com.itlogiclab.microservice.streaming.producer.service.stream.StreamProducer;
+import com.itlogiclab.microservice.streaming.service.domain.dto.create.CreateStreamRequest;
+import com.itlogiclab.microservice.streaming.service.domain.ports.input.service.StreamApplicationService;
 
 @SpringBootApplication(scanBasePackages = "com.itlogiclab.microservice")
 public class ItlogiclabStreamProducerApplication implements CommandLineRunner{
 	private static final Logger LOG = LoggerFactory.getLogger(ItlogiclabStreamProducerApplication.class);
 	
 	
-	private final StreamServiceConfig  streamServiceConfig;
-	private final StreamProducer       streamProducer; 
+	private final StreamServiceConfig  							 streamServiceConfig;
+	private final StreamApplicationService<CreateStreamRequest>  streamApplicationService; 
 	
-	public ItlogiclabStreamProducerApplication(StreamServiceConfig streamServiceConfig, StreamProducer streamProducer) {
+	
+	public ItlogiclabStreamProducerApplication(StreamServiceConfig streamServiceConfig, StreamApplicationService<CreateStreamRequest> streamApplicationService) {
 		super();
-		this.streamServiceConfig = streamServiceConfig;
-		this.streamProducer = streamProducer;
+		this.streamServiceConfig 		= streamServiceConfig;
+		this.streamApplicationService 	= streamApplicationService;
 	}
 
 
@@ -36,7 +38,7 @@ public class ItlogiclabStreamProducerApplication implements CommandLineRunner{
 	public void run(String... args) throws Exception {
 		// TODO Auto-generated method stub
 		LOG.info("StreamServiceConfig: "+streamServiceConfig);
-		streamProducer.produce();
+		streamApplicationService.produceStream();
 		
 	}
 	

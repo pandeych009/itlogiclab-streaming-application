@@ -1,0 +1,15 @@
+server: 
+  port: ${PROD_PORT:20001} 
+spring:
+  application:
+    name: config-client
+  profiles: 
+    active: stream-producer-dev-app
+  config:
+    import: optional:configserver:http://localhost:8888
+    name: stream-producer-dev-app
+
+logging:
+  level:
+    ROOT: INFO
+    org.spring.framework: DEBUG

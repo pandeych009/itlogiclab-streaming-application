@@ -1,6 +1,6 @@
 {"namespace": "com.itlogiclab.microservice.streaming.kafka.avro.modal",
   "type": "record",
-  "name": "TwitterAvroModel",
+  "name": "StreamAvroModel",
   "fields": [
     {"name": "userId", "type": "long"},
     {"name": "id", "type": "long"},
