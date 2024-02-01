@@ -135,6 +135,12 @@
 			
 			<dependency>
 				<groupId>com.itlogiclab.microservice</groupId>
+				<artifactId>itlogiclab-framework-message-kafka-consumer</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			
+			<dependency>
+				<groupId>com.itlogiclab.microservice</groupId>
 				<artifactId>itlogiclab-streaming-producer-domain-application</artifactId>
 				<version>${project.version}</version>
 			</dependency>
@@ -142,6 +148,29 @@
 			<dependency>
 				<groupId>com.itlogiclab.microservice</groupId>
 				<artifactId>itlogiclab-streaming-producer-domain-core</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.itlogiclab.microservice</groupId>
+				<artifactId>itlogiclab-kafka-modal-module</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			
+			<dependency>
+				<groupId>com.itlogiclab.microservice</groupId>
+				<artifactId>itlogiclab-common-kafka-utils</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			
+			<dependency>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-starter-json</artifactId>
+				<version>${spring-boot.version}</version>
+			</dependency>
+				
+			<dependency>
+				<groupId>com.itlogiclab.microservice</groupId>
+				<artifactId>itlogiclab-streaming-producer-message</artifactId>
 				<version>${project.version}</version>
 			</dependency>
 		</dependencies>

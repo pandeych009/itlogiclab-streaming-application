@@ -67,6 +67,7 @@ public class StreamApplicationServiceImpl implements StreamApplicationService<St
 				while(true) {
 					String formattedStreamAsRawJson = getFomattedStream(streamKeywords, minStreamLength, maxStreamLength);
 					StreamEvent domainEvent = new StreamCreatedEvent(streamDomainMapper.createStreamEntity(formattedStreamAsRawJson)); 
+					LOG.info("StreamApplicationServiceImpl: Sleeping for {} ms", sleepTime);
 					streamGenerationMessageListener.onApplicationEvent(domainEvent);
 					sleep(sleepTime);
 				}

@@ -22,13 +22,11 @@
         </rollingPolicy>
     </appender>
     
-    <!-- LOG everything at INFO level -->
-    <root level="INFO">
+    <root level="DEBUG">
         <appender-ref ref="RollingFile" />
         <appender-ref ref="Console" />
     </root>
 
-    <!-- LOG "com.baeldung*" at TRACE level -->
     <logger name="com.itlogiclab.microservice" level="DEBUG" additivity="false">
         <appender-ref ref="RollingFile" />
         <appender-ref ref="Console" /> 

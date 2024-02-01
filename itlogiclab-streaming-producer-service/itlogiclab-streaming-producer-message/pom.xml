@@ -1,26 +1,46 @@
 <?xml version="1.0"?>
 <project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <modelVersion>4.0.0</modelVersion>
-  <parent>
-    <groupId>com.itlogiclab.microservice</groupId>
-    <artifactId>itlogiclab-streaming-producer-service</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
-  </parent>
-  <groupId>com.itlogiclab.microservice</groupId>
-  <artifactId>itlogiclab-streaming-producer-message</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
-  <name>itlogiclab-streaming-producer-message</name>
-  <url>http://maven.apache.org</url>
-  <properties>
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-  </properties>
-  <dependencies>
-    <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>3.8.1</version>
-      <scope>test</scope>
-    </dependency>
-  </dependencies>
+	  <modelVersion>4.0.0</modelVersion>
+	  <parent>
+	    <groupId>com.itlogiclab.microservice</groupId>
+	    <artifactId>itlogiclab-streaming-producer-service</artifactId>
+	    <version>0.0.1-SNAPSHOT</version>
+	  </parent>
+	  <artifactId>itlogiclab-streaming-producer-message</artifactId>
+	  <name>itlogiclab-streaming-producer-message</name>
+		
+	  <dependencies>
+		<dependency>
+			<groupId>com.itlogiclab.microservice</groupId>
+			<artifactId>itlogiclab-framework-message-kafka-config</artifactId>
+		</dependency>  
+		  
+		<dependency>
+			<groupId>com.itlogiclab.microservice</groupId>
+			<artifactId>itlogiclab-framework-message-kafka-producer</artifactId>
+		</dependency>
+		
+		<dependency>
+			<groupId>com.itlogiclab.microservice</groupId>
+			<artifactId>itlogiclab-framework-message-kafka-consumer</artifactId>
+		</dependency>
+		
+		<dependency> 
+			<groupId>com.itlogiclab.microservice</groupId>
+			<artifactId>itlogiclab-kafka-modal-module</artifactId>
+		</dependency>
+		
+		<dependency>
+			<groupId>com.itlogiclab.microservice</groupId>
+			<artifactId>itlogiclab-common-kafka-utils</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>com.itlogiclab.microservice</groupId>
+			<artifactId>itlogiclab-streaming-producer-domain-application</artifactId>
+		</dependency>
+		
+	</dependencies>
+	
 </project>

@@ -26,7 +26,7 @@
 			 
 			 <dependency>
 				<groupId>com.itlogiclab.microservice</groupId>
-				<artifactId>itlogiclab-common-application-config</artifactId>
+				<artifactId>itlogiclab-common-application-config</artifactId> 
 			</dependency>
 		    
 		    <dependency>
@@ -37,6 +37,11 @@
 			<dependency>
 				<groupId>com.itlogiclab.microservice</groupId>
 				<artifactId>itlogiclab-streaming-producer-domain-core</artifactId>
+			</dependency>
+
+			<dependency>
+				<groupId>com.itlogiclab.microservice</groupId>
+				<artifactId>itlogiclab-streaming-producer-message</artifactId>
 			</dependency>
 	  </dependencies>
 </project>

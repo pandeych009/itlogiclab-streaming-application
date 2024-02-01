@@ -7,7 +7,7 @@ import org.springframework.context.annotation.Configuration;
 
 @Configuration
 @ConfigurationProperties(prefix = "stream.kafka.config")
-public class KafkaStreamServiceConfig {
+public class StreamServiceConfig {
 	
 	private List<String> 	filterKeywords;
 	private Boolean 		enableStreams; 

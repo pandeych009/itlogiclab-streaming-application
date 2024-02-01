@@ -24,6 +24,8 @@ public class StreamDomainMapper {
 				.withCreatedAt(ZonedDateTime.now(ZoneId.of("UTC")))
 				.build();
 	}
+	
+	
 //	
 //	public StreamEntity createStreamEntity(String stream, boolean mock) {
 //		return StreamEntity.builder()

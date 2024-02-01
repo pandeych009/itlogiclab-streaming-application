@@ -11,7 +11,7 @@
     
 
 	<!-- LOG "com.baeldung*" at TRACE level -->
-    <logger name="org.springframework" level="DEBUG" additivity="false">
+    <logger name="org.springframework" level="INFO" additivity="false">
         <appender-ref ref="Console" /> 
     </logger>
     <root level="INFO">
