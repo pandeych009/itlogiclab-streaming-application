@@ -1,9 +1,7 @@
-package com.itlogiclab.microservice.streaming.producer.service.entity;
+package com.itlogiclab.microservice.streaming.common.domain.entity;
 
 import java.time.ZonedDateTime;
 import java.util.UUID;
-
-import com.itlogiclab.microservice.common.domain.entity.AggregateRoot;
 
 public class Stream extends AggregateRoot<Long>{
 	

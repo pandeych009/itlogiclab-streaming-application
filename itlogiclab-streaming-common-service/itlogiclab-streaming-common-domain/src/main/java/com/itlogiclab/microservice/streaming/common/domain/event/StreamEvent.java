@@ -1,7 +1,6 @@
-package com.itlogiclab.microservice.streaming.producer.service.event;
+package com.itlogiclab.microservice.streaming.common.domain.event;
 
-import com.itlogiclab.microservice.common.domain.event.DomainEvent;
-import com.itlogiclab.microservice.streaming.producer.service.entity.Stream;
+import com.itlogiclab.microservice.streaming.common.domain.entity.Stream;
 
 public abstract class StreamEvent implements DomainEvent<Stream>{
 	

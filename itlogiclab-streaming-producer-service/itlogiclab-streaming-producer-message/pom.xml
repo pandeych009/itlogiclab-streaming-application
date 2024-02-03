@@ -20,27 +20,22 @@
 			<groupId>com.itlogiclab.microservice</groupId>
 			<artifactId>itlogiclab-framework-message-kafka-producer</artifactId>
 		</dependency>
-		
-		<dependency>
-			<groupId>com.itlogiclab.microservice</groupId>
-			<artifactId>itlogiclab-framework-message-kafka-consumer</artifactId>
-		</dependency>
-		
+				
 		<dependency> 
 			<groupId>com.itlogiclab.microservice</groupId>
-			<artifactId>itlogiclab-kafka-modal-module</artifactId>
+			<artifactId>itlogiclab-streaming-common-config</artifactId>
 		</dependency>
 		
 		<dependency>
 			<groupId>com.itlogiclab.microservice</groupId>
-			<artifactId>itlogiclab-common-kafka-utils</artifactId>
+			<artifactId>itlogiclab-streaming-common-model</artifactId>
 		</dependency>
-
+		
 		<dependency>
 			<groupId>com.itlogiclab.microservice</groupId>
 			<artifactId>itlogiclab-streaming-producer-domain-application</artifactId>
 		</dependency>
-		
+		 
 	</dependencies>
 	
 </project>

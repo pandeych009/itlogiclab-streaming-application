@@ -6,12 +6,12 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
 
-import com.itlogiclab.microservice.common.domain.valueobject.StreamStatus;
 import com.itlogiclab.microservice.common.kafka.config.data.KafkaConfigData;
 import com.itlogiclab.microservice.common.kafka.producer.service.KafkaProducer;
+import com.itlogiclab.microservice.streaming.common.domain.entity.Stream;
+import com.itlogiclab.microservice.streaming.common.domain.valueobject.StreamStatus;
 import com.itlogiclab.microservice.streaming.kafka.avro.modal.StreamAvroModel;
 import com.itlogiclab.microservice.streaming.producer.message.mapper.StreamAvroTransformer;
-import com.itlogiclab.microservice.streaming.producer.service.entity.Stream;
 import com.itlogiclab.microservice.streaming.service.domain.ports.output.mesage.publisher.StreamRequestMessagePublisher;
 
 @Component

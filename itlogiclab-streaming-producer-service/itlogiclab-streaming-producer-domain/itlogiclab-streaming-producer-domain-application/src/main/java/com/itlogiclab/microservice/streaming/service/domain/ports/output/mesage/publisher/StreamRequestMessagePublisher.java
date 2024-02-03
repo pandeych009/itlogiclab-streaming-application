@@ -2,8 +2,8 @@ package com.itlogiclab.microservice.streaming.service.domain.ports.output.mesage
 
 import java.util.function.BiConsumer;
 
-import com.itlogiclab.microservice.common.domain.valueobject.StreamStatus;
-import com.itlogiclab.microservice.streaming.producer.service.entity.Stream;
+import com.itlogiclab.microservice.streaming.common.domain.entity.Stream;
+import com.itlogiclab.microservice.streaming.common.domain.valueobject.StreamStatus;
 
 public interface StreamRequestMessagePublisher {
 	void publish(Stream stream, BiConsumer<Stream, StreamStatus> streamCallBack);

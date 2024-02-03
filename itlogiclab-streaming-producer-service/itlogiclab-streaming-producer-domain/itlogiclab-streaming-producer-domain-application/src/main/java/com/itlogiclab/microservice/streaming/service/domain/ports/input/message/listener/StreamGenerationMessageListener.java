@@ -5,7 +5,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.context.event.EventListener;
 import org.springframework.stereotype.Component;
 
-import com.itlogiclab.microservice.streaming.producer.service.event.StreamEvent;
+import com.itlogiclab.microservice.streaming.common.domain.event.StreamEvent;
 import com.itlogiclab.microservice.streaming.service.domain.ports.output.mesage.publisher.StreamRequestMessagePublisher;
 
 @Component

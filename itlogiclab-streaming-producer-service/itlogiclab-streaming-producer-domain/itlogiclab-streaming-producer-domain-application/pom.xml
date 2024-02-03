@@ -25,12 +25,12 @@
 		 	 	  <groupId>org.springframework.boot</groupId>
 			 	  <artifactId>spring-boot-starter-test</artifactId>
 			 </dependency>
-		
+			 
 			 <dependency>
-				<groupId>com.itlogiclab.microservice</groupId>
-				<artifactId>itlogiclab-common-application-config</artifactId>
+				 <groupId>com.itlogiclab.microservice</groupId>
+				 <artifactId>itlogiclab-streaming-common-config</artifactId>
 			 </dependency>
-			
+			  
 			 <dependency>
 				<groupId>com.itlogiclab.microservice</groupId>
 				<artifactId>itlogiclab-streaming-producer-domain-core</artifactId>

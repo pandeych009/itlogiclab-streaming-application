@@ -11,10 +11,10 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
 
-import com.itlogiclab.microservice.common.application.config.StreamServiceConfig;
-import com.itlogiclab.microservice.common.application.config.utils.StreamApplicationConstants;
+import com.itlogiclab.microservice.streaming.common.config.StreamServiceConfig;
+import com.itlogiclab.microservice.streaming.common.domain.event.StreamEvent;
+import com.itlogiclab.microservice.streaming.common.utils.StreamApplicationConstants;
 import com.itlogiclab.microservice.streaming.producer.service.event.StreamCreatedEvent;
-import com.itlogiclab.microservice.streaming.producer.service.event.StreamEvent;
 import com.itlogiclab.microservice.streaming.service.domain.mapper.StreamDomainMapper;
 import com.itlogiclab.microservice.streaming.service.domain.ports.input.message.listener.StreamGenerationMessageListener;
 import com.itlogiclab.microservice.streaming.service.domain.ports.input.service.StreamApplicationService;

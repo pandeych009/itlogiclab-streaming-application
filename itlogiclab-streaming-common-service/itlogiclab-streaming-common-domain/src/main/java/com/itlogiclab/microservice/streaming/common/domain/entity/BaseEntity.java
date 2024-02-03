@@ -1,4 +1,4 @@
-package com.itlogiclab.microservice.common.domain.entity;
+package com.itlogiclab.microservice.streaming.common.domain.entity;
 
 import java.util.Objects;
 

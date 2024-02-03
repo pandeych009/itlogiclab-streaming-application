@@ -2,8 +2,8 @@ package com.itlogiclab.microservice.streaming.producer.message.mapper;
 
 import org.springframework.stereotype.Component;
 
+import com.itlogiclab.microservice.streaming.common.domain.entity.Stream;
 import com.itlogiclab.microservice.streaming.kafka.avro.modal.StreamAvroModel;
-import com.itlogiclab.microservice.streaming.producer.service.entity.Stream;
 
 @Component
 public class StreamAvroTransformer {

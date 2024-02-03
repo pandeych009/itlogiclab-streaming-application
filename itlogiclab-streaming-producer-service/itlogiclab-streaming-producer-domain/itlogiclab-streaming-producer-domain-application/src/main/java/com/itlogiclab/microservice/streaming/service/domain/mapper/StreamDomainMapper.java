@@ -7,7 +7,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
 
-import com.itlogiclab.microservice.streaming.producer.service.entity.Stream;
+import com.itlogiclab.microservice.streaming.common.domain.entity.Stream;
 
 @Component
 public class StreamDomainMapper {

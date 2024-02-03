@@ -6,9 +6,9 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-import com.itlogiclab.microservice.common.application.config.StreamServiceConfig;
 import com.itlogiclab.microservice.common.kafka.config.data.KafkaConfigData;
 import com.itlogiclab.microservice.common.kafka.config.data.KafkaProducerConfigData;
+import com.itlogiclab.microservice.streaming.common.config.StreamServiceConfig;
 import com.itlogiclab.microservice.streaming.service.domain.ports.input.service.StreamApplicationService;
 
 @SpringBootApplication(scanBasePackages = "com.itlogiclab.microservice")

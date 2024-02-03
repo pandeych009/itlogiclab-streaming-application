@@ -1,4 +1,4 @@
-package com.itlogiclab.microservice.common.domain.exception;
+package com.itlogiclab.microservice.streaming.common.domain.exception;
 
 public class StreamDomainException extends RuntimeException {
 

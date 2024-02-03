@@ -13,8 +13,8 @@
 	  <dependencies>
 		  <dependency>
 			  <groupId>com.itlogiclab.microservice</groupId>
-			  <artifactId>itlogiclab-common-application-domain</artifactId>
-		  </dependency>
+			  <artifactId>itlogiclab-streaming-common-domain</artifactId>
+  		  </dependency>
 	  </dependencies>
-  
 </project>
+    

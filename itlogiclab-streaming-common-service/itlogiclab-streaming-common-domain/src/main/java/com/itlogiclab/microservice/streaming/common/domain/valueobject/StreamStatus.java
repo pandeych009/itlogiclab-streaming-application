@@ -1,4 +1,4 @@
-package com.itlogiclab.microservice.common.domain.valueobject;
+package com.itlogiclab.microservice.streaming.common.domain.valueobject;
 
 public enum StreamStatus {
 	FAILED, COMPLETED
