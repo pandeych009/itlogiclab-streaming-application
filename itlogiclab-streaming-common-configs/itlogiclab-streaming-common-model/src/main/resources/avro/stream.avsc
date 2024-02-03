@@ -1,0 +1,10 @@
+{"namespace": "com.itlogiclab.microservice.streaming.kafka.avro.modal",
+  "type": "record",
+  "name": "StreamAvroModel",
+  "fields": [
+    {"name": "userId", "type": "long"},
+    {"name": "id", "type": "long"},
+    {"name": "text", "type": ["null", "string"]},
+    {"name": "createdAt", "type": ["null", "long"], "logicalType": ["null", "date"]}
+  ]
+}
