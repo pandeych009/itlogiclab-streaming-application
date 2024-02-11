@@ -4,11 +4,12 @@ spring:
   application:
     name: config-client
   profiles: 
-    active: stream-consumer-dev-app
+    active: stream-producer-dev-app
   config:
     import: optional:configserver:http://localhost:8888
-    name: stream-consumer-dev-app
-
+    name: stream-producer-dev-app
+  
+    
 logging:
   level:
     ROOT: INFO

@@ -10,6 +10,28 @@
 
 	<artifactId>itlogiclab-streaming-consumer-domain-application</artifactId>
 	<name>itlogiclab-streaming-consumer-domain-application</name>
-
+	
+	<dependencies>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter</artifactId>
+		</dependency>
+		
+		<dependency>
+			<groupId>com.itlogiclab.microservice</groupId>
+			<artifactId>itlogiclab-streaming-common-domain</artifactId>
+		</dependency>
+		
+		<dependency>
+			<groupId>com.itlogiclab.microservice</groupId>
+			<artifactId>itlogiclab-streaming-common-model</artifactId>
+		</dependency>
+		
+		<dependency>
+			<groupId>com.itlogiclab.microservice</groupId>
+			<artifactId>itlogiclab-streaming-consumer-domain-core</artifactId>
+		</dependency>
+		
+	</dependencies>
 
 </project>

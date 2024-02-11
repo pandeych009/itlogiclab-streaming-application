@@ -83,6 +83,7 @@ public class Stream extends AggregateRoot<Long>{
 		public Stream build() {
 			return new Stream(this);
 		}
+		
 	} 
 
 }

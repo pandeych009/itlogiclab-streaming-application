@@ -5,7 +5,7 @@
 	<packaging>jar</packaging>
 	<name>itlogiclab-streaming-consumer-container</name>
 
-	<parent>
+	<parent> 
 	    <groupId>com.itlogiclab.microservice</groupId>
 	    <artifactId>itlogiclab-streaming-consumer-service</artifactId>
 	    <version>0.0.1-SNAPSHOT</version>
@@ -24,6 +24,11 @@
 		
 		<dependency>
 			<groupId>com.itlogiclab.microservice</groupId>
+			<artifactId>itlogiclab-streaming-common-config</artifactId>
+		</dependency>
+		
+		<dependency>
+			<groupId>com.itlogiclab.microservice</groupId>
 			<artifactId>itlogiclab-streaming-consumer-domain-application</artifactId>
 		</dependency>
 		
@@ -31,5 +36,19 @@
 			<groupId>com.itlogiclab.microservice</groupId>
 			<artifactId>itlogiclab-streaming-consumer-message</artifactId>
 		</dependency>
+	    
+		<dependency>
+			<groupId>com.itlogiclab.microservice</groupId>
+			<artifactId>itlogiclab-streaming-consumer-dataaccess</artifactId>
+		</dependency>
 	</dependencies>
+	
+	<build>
+	    <plugins>
+		      <plugin>
+		        <groupId>org.springframework.boot</groupId>
+		        <artifactId>spring-boot-maven-plugin</artifactId>
+		      </plugin>
+	    </plugins>
+  	</build>  
 </project>

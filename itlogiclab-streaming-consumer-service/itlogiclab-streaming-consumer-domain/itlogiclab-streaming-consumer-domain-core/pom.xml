@@ -11,5 +11,11 @@
 	    <version>0.0.1-SNAPSHOT</version>
 	 </parent>
 
+     <dependencies>
+		 <dependency>
+			 <groupId>com.itlogiclab.microservice</groupId>
+			 <artifactId>itlogiclab-streaming-common-domain</artifactId>
+		 </dependency>
+	 </dependencies>
 
 </project>

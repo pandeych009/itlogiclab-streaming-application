@@ -10,7 +10,7 @@ spring:
          git: 
            uri: https://github.com/pandeych009/itlogiclab-spring-cloud-config-server-repository
            username: pandeych009
-           password: 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
+           password: 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
            default-label: dev
            clone-on-start: true
            basedir: target/config

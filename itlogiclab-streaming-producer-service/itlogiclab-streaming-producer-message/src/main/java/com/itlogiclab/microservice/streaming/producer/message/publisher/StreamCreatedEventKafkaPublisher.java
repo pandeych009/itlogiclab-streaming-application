@@ -43,8 +43,7 @@ public class StreamCreatedEventKafkaPublisher implements StreamRequestMessagePub
 			kafkaProducer.send(kafkaConfigData.getTopicName(), stream.getUserId().toString(), streamAvroModel);
 			LOG.info("StreamCreatedEventKafkaPublisher: Message has been pushed to kafka with topic: {}, Key: {}, Mesasge: {}", kafkaConfigData.getTopicName(), stream.getUserId(), streamAvroModel );
 		} catch (Exception e) {
-			LOG.error("Error while sending OrderApprovalEventPayload to kafka for order id:  and saga id:," +
-					" error: {}", e.getMessage());
+			LOG.error("Error while sending Stream to kafka for stream id: " +stream.getUserId()+ " error: {}", e.getMessage());
 		}
 	}
 
